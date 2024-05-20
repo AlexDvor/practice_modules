@@ -1,7 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import Main from './Main';
 
-// eslint-disable-next-line jest/no-disabled-tests
 describe('Main', () => {
   it('renders Vite + React title', () => {
     render(<Main />);
