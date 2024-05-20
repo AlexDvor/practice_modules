@@ -1,10 +1,11 @@
-import Main from 'components/Main/Main';
+
+import Vite from 'components/Vite/Vite'
 import './App.css';
 
 function App() {
   return (
     <>
-      <Main />
+      <Vite/>
     </>
   );
 }

@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
 
-const Main: FC<{}> = () => {
+const Vite: FC<{}> = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -31,4 +31,4 @@ const Main: FC<{}> = () => {
   );
 };
 
-export default Main;
+export default Vite;
