@@ -1,16 +1,16 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import App from './App';
+import Main from './Main';
 
 // eslint-disable-next-line jest/no-disabled-tests
-describe('App', () => {
+describe('Main', () => {
   it('renders Vite + React title', () => {
-    render(<App />);
+    render(<Main />);
     const titleElement = screen.getByText(/Vite \+ React/i);
     expect(titleElement).toBeInTheDocument();
   });
 
   it('renders Vite and React logos', () => {
-    render(<App />);
+    render(<Main />);
     const viteLogoElement = screen.getByAltText('Vite logo');
     const reactLogoElement = screen.getByAltText('React logo');
     expect(viteLogoElement).toBeInTheDocument();
@@ -18,13 +18,13 @@ describe('App', () => {
   });
 
   it('renders initial count', () => {
-    render(<App />);
+    render(<Main />);
     const countElement = screen.getByText('count is 0');
     expect(countElement).toBeInTheDocument();
   });
 
   it('increments count on button click', () => {
-    render(<App />);
+    render(<Main />);
     const buttonElement = screen.getByText(/count is 0/i);
     fireEvent.click(buttonElement);
     const countElement = screen.getByText('count is 1');
