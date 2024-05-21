@@ -18,6 +18,7 @@
       "components/*": ["components/*"],
       "hooks/*": ["hooks/*"],
       "assets/*": ["assets/*"],
+      "helper/*": ["helper/*"],
       "services/*": ["services/*"]
     },
 

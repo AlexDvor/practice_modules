@@ -10,6 +10,7 @@ export default defineConfig({
       hooks: '/src/hooks',
       assets: '/src/assets',
       services: '/src/services',
+      helper: '/src/helper',
     },
   },
 });
