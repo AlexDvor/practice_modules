@@ -16,14 +16,14 @@ const config = {
 	},
 	coverageDirectory: 'coverage',
 	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: ['<rootDir>/setup-tests.js'],
+	setupFilesAfterEnv: ['<rootDir>/internal/jest.setup.js'],
 	transform: {
 		'^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
 	},
 	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
 	moduleNameMapper: {
 		'^.+\\.svg$': 'jest-svg-transformer',
-		'^.+\\.css$': 'identity-obj-proxy',
+		'^.+\\.(css|less|scss)$': 'identity-obj-proxy',
 	},
 }
 
