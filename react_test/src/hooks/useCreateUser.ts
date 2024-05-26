@@ -16,7 +16,7 @@ const useCreateUser = () => {
 	const [successMessage, setSuccessMessage] = useState<string>('')
 	const [errorMessage, setErrorMessage] = useState<string>('')
 
-	const onSubmit = async ({ password }: CreateUserProps) => {
+	const onSubmit = async ({ password }: CreateUserProps): Promise<void> => {
 		const { success, error }: ValidatePasswordResult = validatePassword(password)
 
 		if (!success && error) {

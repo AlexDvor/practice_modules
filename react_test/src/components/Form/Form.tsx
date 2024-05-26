@@ -3,9 +3,9 @@ import cn from 'clsx'
 import style from './Form.module.css'
 
 interface FormProps {
-	onSubmit: (data: any) => Promise<any>
-	onSuccess?: (data: any) => any
-	onError?: (error: any) => void
+	onSubmit: (data: Record<string, string>) => Promise<void>
+	onSuccess?: (data: Record<string, string>) => void
+	onError?: (error: Error) => void
 	children: ReactNode
 	className?: string
 }
@@ -30,7 +30,7 @@ const Form: React.FC<FormProps> = ({
 			await onSubmit(data)
 			onSuccess && onSuccess(data)
 		} catch (error) {
-			onError && onError(error)
+			onError && onError(error as Error)
 		}
 	}
 
