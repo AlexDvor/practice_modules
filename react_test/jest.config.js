@@ -5,6 +5,8 @@ const config = {
 		'<rootDir>/src/**/*.{js,jsx,ts,tsx}',
 		'!**/node_modules/**',
 		'!<rootDir>/src/**/*.mock.*',
+		'!src/main.tsx',
+		'!src/vite-env.d.ts',
 	],
 	coverageThreshold: {
 		global: {
