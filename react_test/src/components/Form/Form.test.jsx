@@ -7,7 +7,7 @@ describe('Form', () => {
 	it('should render Form with children', () => {
 		const { container, getByTestId } = render(
 			<Form>
-				<div data-testId={testId} />
+				<div data-testid={testId} />
 			</Form>
 		)
 

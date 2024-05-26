@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { wait } from 'helper/wait'
-import validatePassword from 'helper/validatePassword'
+
+import validatePassword from '../helper/validatePassword'
+import { wait } from '../helper/wait'
 
 interface CreateUserProps {
 	name: string
