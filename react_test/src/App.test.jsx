@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act } from '@testing-library/react'
+import { render, screen, fireEvent, act, logRoles } from '@testing-library/react'
 import App from './App'
 import * as waitMock from './helper/wait'
 
@@ -6,7 +6,10 @@ const waitSpy = jest.spyOn(waitMock, 'wait')
 describe('App', () => {
 	it('should render App with form elements and a title', () => {
 		const { container } = render(<App />)
-
+		// helper-testing Playground 2 ways
+		// screen.logTestingPlaygroundURL()
+		// logRoles(container)
+		//
 		expect(screen.getByTestId('app')).toBeInTheDocument()
 
 		const userNameInput = screen.getByLabelText(/User name/)
