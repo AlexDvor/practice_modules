@@ -1,8 +1,8 @@
-import Title from 'components/Title/Title'
-import Form from 'components/Form/Form'
-import Input from 'components/Input/Input'
-import Text from 'components/Text/Text'
-import { useCreateUser } from 'hooks/useCreateUser'
+import Title from './components/Title/Title'
+import Form from './components/Form/Form'
+import Input from './components/Input/Input'
+import Text from './components/Text/Text'
+import { useCreateUser } from './hooks/useCreateUser'
 import './App.css'
 
 function App() {
