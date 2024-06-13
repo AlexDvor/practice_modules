@@ -1,61 +1,50 @@
-// class User {
-// 	name: string
-// 	email: string
+class User {
+	email
 
-// 	constructor(params: { name: string; email: string }) {
-// 		this.name = params.name
-// 		this.email = params.email
-// 	}
-// }
+	constructor(email) {
+		this.email = email
+	}
 
-// const mango = new User({
-// 	name: 'Mango',
-// 	email: 'mango@mail.com',
-// })
+	get email() {
+		return this.email
+	}
 
-// console.log(mango)
-// // { name: "Mango", email: "mango@mail.com" }
+	set email(newEmail) {
+		this.email = newEmail
+	}
+}
+class Admin extends User {
+	blacklistedEmails: string[]
 
-/////////////////////////////////////////////////////////////////////
-// private
+	static role = {
+		BASIC: 'basic',
+		SUPERUSER: 'superuser',
+	}
 
-// class User {
-// 	name
-// 	#email
+	constructor(params) {
+		super(params.email)
+		this.access = params.access
+		this.blacklistedEmails = []
+	}
 
-// 	constructor(params) {
-// 		this.name = params.name
-// 		this.#email = params.email
-// 	}
+	blacklist(email) {
+		this.blacklistedEmails.push(email)
+	}
 
-// 	getEmail() {
-// 		return this.#email
-// 	}
+	isBlacklisted(email) {
+		return this.blacklistedEmails.includes(email)
+	}
+}
 
-// 	changeEmail(newEmail) {
-// 		if (this.#validateEmail(newEmail)) {
-// 			this.#email = newEmail
-// 		} else {
-// 			console.log('Invalid email format')
-// 		}
-// 	}
+const mango = new Admin({
+	email: 'mango@mail.com',
+	access: Admin.role.SUPERUSER,
+})
 
-// 	#validateEmail(email) {
-// 		return email.includes('@')
-// 	}
-// }
+console.log(mango.email) // "mango@mail.com"
+console.log(mango.access) // "superuser"
 
-// const mango = new User({
-// 	name: 'Mango',
-// 	email: 'mango@mail.com',
-// })
-
-// mango.changeEmail('newmail.com') // "Invalid email format"
-// mango.changeEmail('new@mail.com')
-
-// console.log(mango.getEmail()) // "new@mail.com"
-
-// mango.#validateEmail('test') // Error
-
-/////////////////////////////////////////////////////////////////////
-// static
+mango.blacklist('poly@mail.com')
+console.log(mango.blacklistedEmails) // ["poly@mail.com"]
+console.log(mango.isBlacklisted('mango@mail.com')) // false
+console.log(mango.isBlacklisted('poly@mail.com')) // true
